@@ -207,8 +207,9 @@ public class Robot extends TimedRobot {
     // That means that the Y axis drives forward
     // and backward, and the X turns left and right.
 	  
-    robotDrive.arcadeDrive(-m_stick.getY(),(m_stick.getZ()/1.5));
-    intake.set((logiController.getRawButton(5)?.5:(-logiController.getRawAxis(1))));
+    robotDrive.arcadeDrive(-logiController.getRawAxis(5),(logiController.getRawAxis(4)/1.5));
+
+    intake.set((logiController.getRawButton(5)?.5:(-logiController.getRawAxis(6))));
 
     /*if(logiController.getAButton() || logiController.getBButton()){
       double speed = CamYToSpeed(logiController.getBButton());
@@ -225,7 +226,7 @@ public class Robot extends TimedRobot {
     if (logiController.getAButtonPressed()) {
     	shotSpeed -= 0.05;
     }
-    shooter.set(logiController.getXButton()?shotSpeed:(logiController.getRawButton(6)?.5:(-logiController.getRawAxis(5))));
+    shooter.set(logiController.getXButton()?shotSpeed:(logiController.getRawButton(6)?.5:0.0));
     /*if (m_stick.getRawButtonPressed(2)) {
     	speedIncrement= (speedIncrement==SHOOTER_COURSETUNE)?SHOOTER_FINETUNE:SHOOTER_COURSETUNE;
     }

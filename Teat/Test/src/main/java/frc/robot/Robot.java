@@ -207,7 +207,7 @@ public class Robot extends TimedRobot {
     // That means that the Y axis drives forward
     // and backward, and the X turns left and right.
 	  
-    robotDrive.arcadeDrive(-logiController.getRawAxis(5),(logiController.getRawAxis(4)/1.5));
+    robotDrive.arcadeDrive((-logiController.getRawAxis(5)),(logiController.getRawAxis(4)/1.5));
 
     intake.set((logiController.getRawButton(5)?.5:(-logiController.getRawAxis(6))));
 
